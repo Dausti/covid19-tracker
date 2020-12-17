@@ -67,8 +67,8 @@ function App() {
       setCountryInfo(data);
 
       //pass in array of lat & lng coords. from url fetch and set mapcenter to corresponding coords of country
-      setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
-      setMapZoom(4);
+      countryCode === "worldwide" ? setMapCenter([34.80746, -40.4796]) : setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+      countryCode === "worldwide" ? setMapZoom(3) : setMapZoom(4);
 
     });
   }

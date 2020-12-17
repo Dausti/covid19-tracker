@@ -15,7 +15,7 @@ function ChangeMap({ center, zoom }) {
 function Map({ countries, casesType, center, zoom }) {
   return (
     <div className="map">
-    <MapContainer className="map__mapView">
+    <MapContainer>
     <ChangeMap center={center} zoom={zoom}/>
     <TileLayer
       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

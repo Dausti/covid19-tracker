@@ -17,6 +17,7 @@ function App() {
   const [tableData, setTableData] = useState([]);
   const [mapCenter, setMapCenter] = useState({lat: 34.80746, lng: -40.4796});
   const [mapZoom, setMapZoom] = useState(3);
+  const [mapCountries, setMapCountries] = useState([]);
 
 
   // get worldwide data once when page is loaded
@@ -45,6 +46,7 @@ function App() {
         const sortedData = sortData(data); // sort data by largest # of cases and display in table from greatest to least
         setTableData(sortedData);
         setCountries(countries);
+        setMapCountries(data);
       });
 
     };
@@ -101,7 +103,7 @@ function App() {
     </div> 
 
     {/* map */}
-    <Map center={mapCenter} zoom={mapZoom}/>
+    <Map countries={mapCountries} center={mapCenter} zoom={mapZoom}/>
     </div> 
 
     <Card className="app__right">
